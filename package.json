@@ -1,5 +1,5 @@
 {
-  "name": "os-utilities",
+  "name": "@on-sight-strategy/os-utilities",
   "version": "1.0.0",
   "description": "on/Sight dev folder utilities and helpful functions",
   "exports": "./src/index.js",
@@ -10,6 +10,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "on/Sight",
   "license": "ISC"
 }

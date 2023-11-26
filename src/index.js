@@ -1,7 +1,6 @@
 //index.js
 
 export default function test() {
-  console.log('NPM TEST')
   return "test"
 }
 
@@ -16,6 +15,6 @@ export {
   debounce
 } from './functions.js';
 
-export { 
+export {
   extendJQueryFns
 } from './plugins.js';

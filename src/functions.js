@@ -142,24 +142,25 @@ export function syncElementsHeight($elements) {
 // Get the number of pixels an element is on screen
 export function calculatePixelsOnScreen(element) {
   // Make sure we have a jQuery object
-  let $element = element
-  if (element instanceof HTMLElement) $element = $(element)
+
+  if (!element instanceof HTMLElement) return;
 
   // Get the element height, top, and bottom
-  const elementHeight = $element.outerHeight()
-  const elementTop = $element.offset().top
-  const elementBottom = elementTop + elementHeight
+  const top = element.offsetTop;
+  const height = element.offsetHeight;
+  const elementBottom = top + height;
 
   // Get the viewport top and bottom
   const viewportTop = window.scrollY
   const viewportBottom = viewportTop + window.innerHeight
 
   // Calculate the number of pixels above and below the screen
-  const pixelsAboveScreen = Math.max(viewportTop - elementTop, 0)
+  const pixelsAboveScreen = Math.max(viewportTop - top, 0)
   const pixelsBelowScreen = Math.max(elementBottom - viewportBottom, 0)
+  const pixelsRemaining = Math.max(height - pixelsAboveScreen - pixelsBelowScreen, 0)
 
   // Return the remaining number of pixels on screen
-  return Math.max(elementHeight - pixelsAboveScreen - pixelsBelowScreen, 0)
+  return pixelsRemaining;
 }
 
 // Get the element that is taking up the most visible space on screen

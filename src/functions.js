@@ -62,6 +62,42 @@ export function isMobile() {
   return false
 }
 
+
+/**
+ * Listens for user interaction to determine if user is navigating by keyboard 
+ * (used in tandem with [data-tab-nav='true'] CSS Selector to allow different ::focus-visible configurations for Mouse-Nav vs Tab-Nav)
+ * 
+ * @param {Object} event - The event object
+ * 
+ * @example
+ * $(document).on('keydown', function(e) {
+ *  currentUserNavigationMethod(e);
+ * })
+ * 
+ * input:focus-visible{
+ *  box-shadow: 0 0 0 1px theme('colors.primary');
+ * }
+ * [data-tab-nav='true'] input:focus-visible {
+ *  box-shadow: 0 0 0 3px theme('colors.secondary'), 0 0 3px 6px theme('colors.primary');
+ * }
+ * 
+ */
+export function currentUserNavigationMethod(event) {
+  const body = document.body
+  // Default behavior is mouse
+
+  if (event.key === "Tab") {
+    if (body.dataset.tabNav !== 'true') {
+      body.dataset.tabNav = 'true'
+
+      document.addEventListener('click', () => {
+        body.dataset.tabNav = 'false'
+      }, { once: true })
+    }
+  }
+}
+
+
 /**
  *
  * @param {*} cents

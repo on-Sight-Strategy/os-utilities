@@ -8,6 +8,7 @@ export {
   elementsExist, 
   toggleScroll,
   isMobile,
+  currentUserNavigationMethod,
   formatMoney,
   syncElementsHeight,
   calculatePixelsOnScreen,

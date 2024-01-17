@@ -227,7 +227,3 @@ export function debounce(callback, wait = 200) {
     }, wait)
   }
 }
-
-export function test(){
-  return 'npm workflow test'
-}

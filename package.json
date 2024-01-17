@@ -1,6 +1,6 @@
 {
   "name": "@on-sight-strategy/os-utilities",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "on/Sight dev folder utilities and helpful functions",
   "exports": "./src/index.js",
   "type": "module",

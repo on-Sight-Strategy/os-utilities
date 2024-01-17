@@ -1,9 +1,5 @@
 //index.js
 
-export default function test() {
-  return "test"
-}
-
 export { 
   elementsExist, 
   toggleScroll,
